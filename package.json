@@ -1,0 +1,25 @@
+{
+  "name": "video-cut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": {
+    "name": "ShinChven ZHANG",
+    "email": "shinchven@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShinChven/video-cut.git"
+  },
+  "scripts": {
+  },
+  "bin":{
+    "cut-video": "src/index.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "readline-sync": "^1.4.10"
+  }
+}
