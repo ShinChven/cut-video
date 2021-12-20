@@ -11,15 +11,15 @@
     "type": "git",
     "url": "https://github.com/ShinChven/video-cut.git"
   },
-  "scripts": {
-  },
-  "bin":{
+  "scripts": {},
+  "bin": {
     "cut-video": "src/index.js"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
     "js-yaml": "^4.1.0",
+    "moment": "^2.29.1",
     "readline-sync": "^1.4.10"
   }
 }

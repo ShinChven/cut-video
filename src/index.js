@@ -51,6 +51,13 @@ if (!fs.existsSync(configPath)) { // if the file does not exist, create one
 
 // Assuming the config file exists, cut the video by it.
 
+const moment = require('moment');
+const runtime = (start,end)=>{
+    const diff = moment(end, 'HH:mm:ss.SSS').diff(moment(start, 'HH:mm:ss.SSS'), 'seconds');
+    return diff;
+}
+
+
 console.log('Cutting video by config file:', configPath);
 
 const config = yaml.load(fs.readFileSync(configPath, 'utf8'));
@@ -62,7 +69,7 @@ Object.keys(clips).forEach(key => {
     const ext = path.extname(videoPath);
     const clip = clips[key];
     const start = clip.start;
-    const end = clip.end;
+    const t = runtime(start, clip.end);
     const input = config.input;
     const output = path.posix.resolve(path.dirname(input), key + ext);
     if (fs.existsSync(output)) {
@@ -78,7 +85,7 @@ Object.keys(clips).forEach(key => {
             }
         }
     }
-    const command = `ffmpeg -ss "${start}" -i "${input}" -t "${end}" -c copy "${output}" -y`;
+    const command = `ffmpeg -ss "${start}" -i "${input}" -t "${t}" -c copy "${output}" -y`;
     console.log(command);
-    execSync(command);
+    execSync(command, {});
 });
