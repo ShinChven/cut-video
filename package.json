@@ -1,7 +1,7 @@
 {
   "name": "video-cut",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cut video into clips with given timestamp.",
   "main": "index.js",
   "author": {
     "name": "ShinChven ZHANG",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ShinChven/video-cut.git"
+    "url": "https://github.com/ShinChven/cut-video.git"
   },
   "scripts": {},
   "bin": {
@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "readline-sync": "^1.4.10"
   }
 }
